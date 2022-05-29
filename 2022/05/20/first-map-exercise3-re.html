@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>kaggle - Geospatial Analysis03 | SUIN KANG</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="kaggle - Geospatial Analysis03" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DATAMINING" />
+<meta property="og:description" content="DATAMINING" />
+<link rel="canonical" href="https://kangsuin01.github.io/suin_blog/2022/05/20/first-map-exercise3-re.html" />
+<meta property="og:url" content="https://kangsuin01.github.io/suin_blog/2022/05/20/first-map-exercise3-re.html" />
+<meta property="og:site_name" content="SUIN KANG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-20T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="kaggle - Geospatial Analysis03" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-20T00:00:00-05:00","datePublished":"2022-05-20T00:00:00-05:00","description":"DATAMINING","headline":"kaggle - Geospatial Analysis03","mainEntityOfPage":{"@type":"WebPage","@id":"https://kangsuin01.github.io/suin_blog/2022/05/20/first-map-exercise3-re.html"},"url":"https://kangsuin01.github.io/suin_blog/2022/05/20/first-map-exercise3-re.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/suin_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://kangsuin01.github.io/suin_blog/feed.xml" title="SUIN KANG" /><link rel="shortcut icon" type="image/x-icon" href="/suin_blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/suin_blog/">SUIN KANG</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/suin_blog/about/">About Me</a><a class="page-link" href="/suin_blog/search/">Search</a><a class="page-link" href="/suin_blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">kaggle - Geospatial Analysis03</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-20T00:00:00-05:00" itemprop="datePublished">
+        May 20, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/KANGSUIN01/suin_blog/tree/master/_notebooks/2022-05-20-first-map-exercise3-re.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/suin_blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/KANGSUIN01/suin_blog/master?filepath=_notebooks%2F2022-05-20-first-map-exercise3-re.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/suin_blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/KANGSUIN01/suin_blog/blob/master/_notebooks/2022-05-20-first-map-exercise3-re.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/suin_blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FKANGSUIN01%2Fsuin_blog%2Fblob%2Fmaster%2F_notebooks%2F2022-05-20-first-map-exercise3-re.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/suin_blog/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-20-first-map-exercise3-re.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Exercise:-Interactive-Maps">3. Exercise: Interactive Maps<a class="anchor-link" href="#3.-Exercise:-Interactive-Maps"> </a></h1><p>소개
+당신은 일본의 도시 안전 계획가이며 일본의 어느 지역에서 추가 지진 보강이 필요한지 분석하고 있습니다. 인구 밀도가 높고 지진이 발생하기 쉬운 지역은 어디입니까?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">from</span> <span class="nn">folium</span> <span class="kn">import</span> <span class="n">Choropleth</span>
+<span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="kn">import</span> <span class="n">HeatMap</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">embed_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;500px&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>수업 과정</p>
+<p>3.1 지진은 판 경계와 일치합니까?
+아래 코드 셀을 실행하여 전역 플레이트 경계를 표시하는 DataFrame plate_boundaries를 만듭니다. "좌표" 열은 경계를 따라 (위도, 경도) 위치의 목록입니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plate_boundaries</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;C:/Users/Kangdaeyong/Desktop/datamining/kaggle_geospatial_analysis/archive/Plate_Boundaries/Plate_Boundaries/Plate_Boundaries.shp&quot;</span><span class="p">)</span>
+<span class="n">plate_boundaries</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plate_boundaries</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<span class="n">plate_boundaries</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;geometry&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plate_boundaries</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HAZ_PLATES</th>
+      <th>HAZ_PLAT_1</th>
+      <th>HAZ_PLAT_2</th>
+      <th>Shape_Leng</th>
+      <th>coordinates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRENCH</td>
+      <td>SERAM TROUGH (ACTIVE)</td>
+      <td>6722</td>
+      <td>5.843467</td>
+      <td>[(-5.444200361999947, 133.6808931800001), (-5....</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRENCH</td>
+      <td>WETAR THRUST</td>
+      <td>6722</td>
+      <td>1.829013</td>
+      <td>[(-7.760600482999962, 125.47879802900002), (-7...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRENCH</td>
+      <td>TRENCH WEST OF LUZON (MANILA TRENCH) NORTHERN ...</td>
+      <td>6621</td>
+      <td>6.743604</td>
+      <td>[(19.817899819000047, 120.09999798800004), (19...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRENCH</td>
+      <td>BONIN TRENCH</td>
+      <td>9821</td>
+      <td>8.329381</td>
+      <td>[(26.175899215000072, 143.20620700100005), (26...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRENCH</td>
+      <td>NEW GUINEA TRENCH</td>
+      <td>8001</td>
+      <td>11.998145</td>
+      <td>[(0.41880004000006466, 132.8273013480001), (0....</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>그런 다음 변경 없이 아래 코드 셀을 실행하여 과거 지진 데이터를 DataFrame 지진으로 로드합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">earthquakes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:/Users/Kangdaeyong/Desktop/datamining/kaggle_geospatial_analysis/archive/earthquakes1970-2014.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DateTime&quot;</span><span class="p">])</span>
+<span class="n">earthquakes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>DateTime</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Depth</th>
+      <th>Magnitude</th>
+      <th>MagType</th>
+      <th>NbStations</th>
+      <th>Gap</th>
+      <th>Distance</th>
+      <th>RMS</th>
+      <th>Source</th>
+      <th>EventID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1970-01-04 17:00:40.200</td>
+      <td>24.139</td>
+      <td>102.503</td>
+      <td>31.0</td>
+      <td>7.5</td>
+      <td>Ms</td>
+      <td>90.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970010e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1970-01-06 05:35:51.800</td>
+      <td>-9.628</td>
+      <td>151.458</td>
+      <td>8.0</td>
+      <td>6.2</td>
+      <td>Ms</td>
+      <td>85.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1970-01-08 17:12:39.100</td>
+      <td>-34.741</td>
+      <td>178.568</td>
+      <td>179.0</td>
+      <td>6.1</td>
+      <td>Mb</td>
+      <td>59.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1970-01-10 12:07:08.600</td>
+      <td>6.825</td>
+      <td>126.737</td>
+      <td>73.0</td>
+      <td>6.1</td>
+      <td>Mb</td>
+      <td>91.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1970-01-16 08:05:39.000</td>
+      <td>60.280</td>
+      <td>-152.660</td>
+      <td>85.0</td>
+      <td>6.0</td>
+      <td>ML</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AK</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>아래 코드 셀은 지도에서 판 경계를 시각화합니다. 모든 지진 데이터를 사용하여 동일한 지도에 히트맵을 추가하여 지진이 판 경계와 일치하는지 확인합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_1</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;cartodbpositron&#39;</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># 판 경계 시각화하는 부분</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plate_boundaries</span><span class="p">)):</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">plate_boundaries</span><span class="o">.</span><span class="n">coordinates</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_1</span><span class="p">)</span>
+
+<span class="c1"># Add a heatmap to the map</span>
+<span class="n">HeatMap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">earthquakes</span><span class="p">[[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">]],</span> <span class="n">radius</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_1</span><span class="p">)</span>
+
+<span class="n">m_1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#50948;-heatmap&#51012;-&#53685;&#54644;-&#51648;&#51652;&#51060;-&#51068;&#50612;&#45208;&#45716;-&#44275;&#44284;-&#54032;-&#44221;&#44228;&#44032;-&#44057;&#45796;&#45716;-&#44163;&#51012;-&#50508;-&#49688;-&#51080;&#49845;&#45768;&#45796;.">&#50948; heatmap&#51012; &#53685;&#54644; &#51648;&#51652;&#51060; &#51068;&#50612;&#45208;&#45716; &#44275;&#44284; &#54032; &#44221;&#44228;&#44032; &#44057;&#45796;&#45716; &#44163;&#51012; &#50508; &#49688; &#51080;&#49845;&#45768;&#45796;.<a class="anchor-link" href="#&#50948;-heatmap&#51012;-&#53685;&#54644;-&#51648;&#51652;&#51060;-&#51068;&#50612;&#45208;&#45716;-&#44275;&#44284;-&#54032;-&#44221;&#44228;&#44032;-&#44057;&#45796;&#45716;-&#44163;&#51012;-&#50508;-&#49688;-&#51080;&#49845;&#45768;&#45796;."> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3-2.-&#51068;&#48376;&#51032;-&#51648;&#51652;-&#44618;&#51060;&#50752;-&#54032;-&#44221;&#44228;&#50640;-&#45824;&#54620;-&#44540;&#51217;&#49457;-&#49324;&#51060;&#50640;-&#44288;&#44228;&#44032;-&#51080;&#49845;&#45768;&#44620;?">3-2. &#51068;&#48376;&#51032; &#51648;&#51652; &#44618;&#51060;&#50752; &#54032; &#44221;&#44228;&#50640; &#45824;&#54620; &#44540;&#51217;&#49457; &#49324;&#51060;&#50640; &#44288;&#44228;&#44032; &#51080;&#49845;&#45768;&#44620;?<a class="anchor-link" href="#3-2.-&#51068;&#48376;&#51032;-&#51648;&#51652;-&#44618;&#51060;&#50752;-&#54032;-&#44221;&#44228;&#50640;-&#45824;&#54620;-&#44540;&#51217;&#49457;-&#49324;&#51060;&#50640;-&#44288;&#44228;&#44032;-&#51080;&#49845;&#45768;&#44620;?"> </a></h4><p>최근에 지진의 깊이가 지구의 구조에 대한 중요한 정보를 알려준다는 것을 읽었습니다. 흥미로운 글로벌 패턴이 있는지 확인하고 싶고 일본의 깊이가 어떻게 다른지 이해하고 싶습니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_2</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;cartodbpositron&#39;</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plate_boundaries</span><span class="p">)):</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">plate_boundaries</span><span class="o">.</span><span class="n">coordinates</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_2</span><span class="p">)</span>
+ 
+
+<span class="c1"># Custom function to assign a color to each circle</span>
+<span class="k">def</span> <span class="nf">color_producer</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;forestgreen&#39;</span>
+    <span class="k">elif</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;darkorange&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;darkred&#39;</span>
+
+<span class="c1"># Add a map to visualize earthquake depth</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">earthquakes</span><span class="p">)):</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Latitude&#39;</span><span class="p">],</span> <span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]],</span>
+        <span class="n">radius</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color_producer</span><span class="p">(</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Depth&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_2</span><span class="p">)</span>
+
+
+<span class="n">m_2</span>
+
+<span class="c1"># 50보다 싶이가 작으면 forestgreen, 100보다 작으면 darkorange, 100이상이면 darkred</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>판 경계와의 근접성과 지진 깊이 사이의 관계를 감지할 수 있습니까? 이 패턴이 전 세계적으로 유지됩니까? 일본에서?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>일본 북부에서는 판 경계에 가까운 지진이 더 얕아지는 경향이 있는 것으로 나타났습니다(판 경계에서 멀리 떨어진 지진은 더 깊습니다). 이 패턴은 남미 서부 해안과 같은 다른 지역에서도 반복됩니다. 그러나 모든 곳에서 적용되는 것은 아닙니다(예: 중국, 몽골, 러시아).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.3-&#51064;&#44396;&#48128;&#46020;&#44032;-&#45458;&#51008;-&#54788;&#51008;?">3.3 &#51064;&#44396;&#48128;&#46020;&#44032; &#45458;&#51008; &#54788;&#51008;?<a class="anchor-link" href="#3.3-&#51064;&#44396;&#48128;&#46020;&#44032;-&#45458;&#51008;-&#54788;&#51008;?"> </a></h4><p>변경 없이 다음 코드 셀을 실행하여 일본 현의 지리적 경계를 포함하는 GeoDataFrame 현을 생성합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prefectures</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;C:/Users/Kangdaeyong/Desktop/datamining/kaggle_geospatial_analysis/archive/japan-prefecture-boundaries/japan-prefecture-boundaries/japan-prefecture-boundaries.shp&quot;</span><span class="p">)</span>
+<span class="n">prefectures</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;prefecture&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">prefectures</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>prefecture</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aichi</th>
+      <td>MULTIPOLYGON (((137.09523 34.65330, 137.09546 ...</td>
+    </tr>
+    <tr>
+      <th>Akita</th>
+      <td>MULTIPOLYGON (((139.55725 39.20330, 139.55765 ...</td>
+    </tr>
+    <tr>
+      <th>Aomori</th>
+      <td>MULTIPOLYGON (((141.39860 40.92472, 141.39806 ...</td>
+    </tr>
+    <tr>
+      <th>Chiba</th>
+      <td>MULTIPOLYGON (((139.82488 34.98967, 139.82434 ...</td>
+    </tr>
+    <tr>
+      <th>Ehime</th>
+      <td>MULTIPOLYGON (((132.55859 32.91224, 132.55904 ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음 코드 셀은 일본 각 현에 대한 인구, 면적(제곱 킬로미터) 및 인구 밀도(제곱 킬로미터당)를 포함하는 DataFrame 통계를 생성합니다. 변경 없이 코드 셀을 실행합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;C:/Users/Kangdaeyong/Desktop/datamining/kaggle_geospatial_analysis/archive/japan-prefecture-population.csv&quot;</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;prefecture&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Calculate area (in square kilometers) of each prefecture</span>
+<span class="n">area_sqkm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">prefectures</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">32654</span><span class="p">)</span><span class="o">.</span><span class="n">area</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;area_sqkm&#39;</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">area_sqkm</span><span class="p">)</span>
+
+<span class="c1"># Add density (per square kilometer) of each prefecture</span>
+<span class="n">stats</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;area_sqkm&quot;</span><span class="p">]</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>area_sqkm</th>
+      <th>density</th>
+    </tr>
+    <tr>
+      <th>prefecture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tokyo</th>
+      <td>12868000</td>
+      <td>1800.614782</td>
+      <td>7146.448049</td>
+    </tr>
+    <tr>
+      <th>Kanagawa</th>
+      <td>8943000</td>
+      <td>2383.038975</td>
+      <td>3752.771186</td>
+    </tr>
+    <tr>
+      <th>Osaka</th>
+      <td>8801000</td>
+      <td>1923.151529</td>
+      <td>4576.342460</td>
+    </tr>
+    <tr>
+      <th>Aichi</th>
+      <td>7418000</td>
+      <td>5164.400005</td>
+      <td>1436.372085</td>
+    </tr>
+    <tr>
+      <th>Saitama</th>
+      <td>7130000</td>
+      <td>3794.036890</td>
+      <td>1879.264806</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다음 코드 셀을 사용하여 choropleth map을 만들어 인구 밀도를 시각화합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_3</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;cartodbpositron&#39;</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+
+
+<span class="c1"># Create a choropleth map to visualize population density</span>
+<span class="n">Choropleth</span><span class="p">(</span><span class="n">geo_data</span><span class="o">=</span><span class="n">prefectures</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">__geo_interface__</span><span class="p">,</span>
+           <span class="n">data</span><span class="o">=</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">],</span>
+           <span class="n">key_on</span><span class="o">=</span><span class="s2">&quot;feature.id&quot;</span><span class="p">,</span>
+           <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;YlGnBu&#39;</span><span class="p">,</span>
+           <span class="n">legend_name</span><span class="o">=</span><span class="s1">&#39;Population density (per square kilometer)&#39;</span>
+          <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_3</span><span class="p">)</span>
+
+<span class="n">m_3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>도쿄, 가나가와, 오사카는 인구 밀도가 가장 높습니다. 이들은 모두 일본 중부에 위치하고 있으며 도쿄와 가나가와현이 인접해 있습니다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="3.4.-&#44508;&#47784;&#44032;-&#53360;-&#51648;&#51652;&#51060;-&#48156;&#49373;&#54616;&#44592;-&#49772;&#50868;-&#44256;&#48128;&#46020;-&#54788;&#51008;?">3.4. &#44508;&#47784;&#44032; &#53360; &#51648;&#51652;&#51060; &#48156;&#49373;&#54616;&#44592; &#49772;&#50868; &#44256;&#48128;&#46020; &#54788;&#51008;?<a class="anchor-link" href="#3.4.-&#44508;&#47784;&#44032;-&#53360;-&#51648;&#51652;&#51060;-&#48156;&#49373;&#54616;&#44592;-&#49772;&#50868;-&#44256;&#48128;&#46020;-&#54788;&#51008;?"> </a></h4><p>지진 보강의 혜택을 받을 수 있는 한 현을 제안하는 지도를 만듭니다. 지도는 밀도와 지진 규모를 모두 시각화해야 합니다.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_4</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="mi">35</span><span class="p">,</span><span class="mi">136</span><span class="p">],</span> <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;cartodbpositron&#39;</span><span class="p">,</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Create a map</span>
+<span class="k">def</span> <span class="nf">color_producer</span><span class="p">(</span><span class="n">magnitude</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">magnitude</span> <span class="o">&gt;</span> <span class="mf">6.5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;red&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;green&#39;</span>
+
+<span class="n">Choropleth</span><span class="p">(</span>
+    <span class="n">geo_data</span><span class="o">=</span><span class="n">prefectures</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">__geo_interface__</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">stats</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">],</span>
+    <span class="n">key_on</span><span class="o">=</span><span class="s2">&quot;feature.id&quot;</span><span class="p">,</span>
+    <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;BuPu&#39;</span><span class="p">,</span>
+    <span class="n">legend_name</span><span class="o">=</span><span class="s1">&#39;Population density (per square kilometer)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_4</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">earthquakes</span><span class="p">)):</span>
+    <span class="n">folium</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span>
+        <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Latitude&#39;</span><span class="p">],</span> <span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]],</span>
+        <span class="n">popup</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">],</span>
+            <span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;DateTime&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="p">),</span>
+        <span class="n">radius</span><span class="o">=</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">]</span><span class="o">**</span><span class="mf">5.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color_producer</span><span class="p">(</span><span class="n">earthquakes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;Magnitude&#39;</span><span class="p">]))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m_4</span><span class="p">)</span>
+
+<span class="n">m_4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>이 질문에 대한 명확하고 단일한 대답은 없지만 몇 가지 합리적인 옵션이 있습니다. 도쿄는 단연 가장 인구 밀도가 높은 현이며 많은 지진을 경험했습니다. 오사카는 상대적으로 인구 밀도가 낮지만 도쿄 근처보다 상대적으로 강한 지진을 경험했습니다. 그리고 가나가와(Kanagawa)의 긴 해안(높은 밀도와 강한 지진의 역사적 근접성에 더하여)은 추가된 잠재적 쓰나미 위험에 대해 걱정하게 만들 수 있습니다.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/suin_blog/2022/05/20/first-map-exercise3-re.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/suin_blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/suin_blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/suin_blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>DATAMINING</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/suin_blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/suin_blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
